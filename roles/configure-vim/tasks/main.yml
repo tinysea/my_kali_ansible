@@ -1,0 +1,24 @@
+---
+- name: "Install vim"
+  apt:
+    name: vim-gtk3
+    state: present
+  become: true
+  become_method: sudo
+- name: "Copying Vim Config"
+  copy:
+    src: "{{ role_path }}/files/.vimrc"
+    dest: "{{ ansible_env.HOME }}"
+- name: "Installing vim plugins"
+  shell:
+    cmd: vim +PluginInstall +qall
+- name: "Changing colorscheme to gruvbox"
+  shell:
+    cmd: echo "colorscheme gruvbox" >> ~/.vimrc
+- name: "Installing YCM plugin"
+  command:
+    cmd: python3 install.py --all
+    chdir: "{{ ansible_env.HOME }}/.vim/bundle/YouCompleteMe"
+
+
+

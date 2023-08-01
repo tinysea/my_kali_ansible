@@ -1,0 +1,49 @@
+---
+- name: "Updating apt repo/cache"
+  apt: update_cache=yes force_apt_get=yes cache_valid_time=3600
+  become: true
+  become_method: sudo
+
+- name: "Upgrade all packages"
+  apt: upgrade=yes force_apt_get=yes
+  become: true
+  become_method: sudo
+  
+- name: "Installing Packages"
+  package:
+    name:
+      - jq
+      - pipx
+      - ntpdate
+      - flameshot
+      - exiftool
+      - git
+      - curl
+      - openvpn
+      - tmux
+      - i3-wm
+      - i3status
+      - i3lock
+      - rofi
+      - xcwd
+      - rlwrap
+      - nitrogen
+      - feh
+      - alacritty
+      - nodejs
+      - htop
+      - apt-file
+      - mono-complete 
+      - golang 
+      - nodejs 
+      - openjdk-17-jdk 
+      - openjdk-17-jre 
+      - npm
+      - xz-utils
+      - python3-dev
+      - cmake
+      - build-essential
+      - locate
+    state: latest
+  become: true
+  become_method: sudo

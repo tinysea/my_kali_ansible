@@ -1,0 +1,36 @@
+---
+- name: "Install i3 "
+  apt:
+    name: 
+      - i3-wm
+      - i3status
+      - i3lock
+    state: present
+  become: true
+  become_method: sudo
+- name: "ensures {{ ansible_env.HOME }}/.config/i3/ dir exists"
+  file: 
+    path: "{{ ansible_env.HOME }}/.config/i3/"
+    state: directory
+- name: "Copying i3 Config"
+  copy:
+    src: "{{ role_path }}/files/config"
+    dest: "{{ ansible_env.HOME }}/.config/i3/"
+- name: "ensures {{ ansible_env.HOME }}/.config/i3status/ dir exists"
+  file: 
+    path: "{{ ansible_env.HOME }}/.config/i3status/"
+    state: directory
+- name: "Copying i3status Config"
+  copy:
+    src: "{{ role_path }}/files/i3status.conf"
+    dest: "{{ ansible_env.HOME }}/.config/i3status/config"
+- name: "ensures {{ ansible_env.HOME }}/Immagini/ dir exists"
+  file: 
+    path: "{{ ansible_env.HOME }}/Immagini/"
+    state: directory
+- name: "Copying background"
+  copy:
+    src: "{{ role_path }}/files/kali-cubism.jpg"
+    dest: "{{ ansible_env.HOME }}/Immagini/"
+
+

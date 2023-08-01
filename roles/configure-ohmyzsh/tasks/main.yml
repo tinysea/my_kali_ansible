@@ -1,0 +1,11 @@
+---
+
+- name: "Exporting path in .zshrc"
+  shell:
+    cmd: echo "export PATH=~/.local/bin:$PATH" >> ~/.zshrc
+- name: "add zsh-autosuggestions plugin to .zshrc"
+  shell:
+    cmd: sed -i "s/plugins\=(/plugins\=(zsh-autosuggestions\ /g" ~/.zshrc
+
+
+

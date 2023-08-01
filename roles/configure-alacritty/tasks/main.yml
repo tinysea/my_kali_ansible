@@ -1,0 +1,22 @@
+---
+- name: "Install Alacritty"
+  apt:
+    name: alacritty
+    state: present
+  become: true
+  become_method: sudo
+
+- name: "npm install alacritty-themes"
+  command:
+    cmd: npm i -g alacritty-themes
+  become: true
+
+
+- name: "Create alacritty config"
+  command:
+    cmd: alacritty-themes --create
+
+
+- name: "Change alacritty theme"
+  command:
+    cmd: alacritty-themes Jmbi
