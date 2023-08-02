@@ -44,6 +44,9 @@
       - cmake
       - build-essential
       - locate
+      - xclip
+      - xsel
+      - neofetch
     state: latest
   become: true
   become_method: sudo

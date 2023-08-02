@@ -5,7 +5,7 @@
     cmd: echo "export PATH=~/.local/bin:$PATH" >> ~/.zshrc
 - name: "add zsh-autosuggestions plugin to .zshrc"
   shell:
-    cmd: sed -i "s/plugins\=(/plugins\=(zsh-autosuggestions\ /g" ~/.zshrc
+    cmd: sed -i "s/plugins\=(/plugins\=(zsh-autosuggestions\ history\ dirhistory\ copybuffer\ copyfile copypath\ web-search\ sudo\ /g" ~/.zshrc
 
 
 
