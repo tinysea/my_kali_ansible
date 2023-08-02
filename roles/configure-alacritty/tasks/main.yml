@@ -19,4 +19,4 @@
 
 - name: "Change alacritty theme"
   command:
-    cmd: alacritty-themes Jmbi
+    cmd: alacritty-themes Cobalt-2
