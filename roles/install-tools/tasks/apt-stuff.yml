@@ -47,6 +47,7 @@
       - xclip
       - xsel
       - neofetch
+      - gobuster
     state: latest
   become: true
   become_method: sudo
