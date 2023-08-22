@@ -116,11 +116,11 @@ let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
 
 "Enable closing 
 " Automatically closing braces
-inoremap {<CR> {<CR>}<C-o>O
-inoremap (  ()<ESC>hli
-inoremap [ []<ESC>ha
-inoremap " ""<ESC>ha
-inoremap ' ''<ESC>ha
+"inoremap {<CR> {<CR>}<C-o>O
+"inoremap (  ()<ESC>hli
+"inoremap [ []<ESC>ha
+"inoremap " ""<ESC>ha
+"inoremap ' ''<ESC>ha
 
 
 set whichwrap+=<,>,[,]]
