@@ -129,6 +129,6 @@ set textwidth=0 wrapmargin=0
 command! -range=% Hardcopy2pdf <line1>,<line2> hardcopy > %.ps | !ps2pdf %.ps && rm %.ps && echo 'Created: %.pdf'''
 
 set background=dark
-"colorscheme gruvbox
+colorscheme gruvbox
 highlight Normal ctermbg=NONE
 highlight nonText ctermbg=NONE
