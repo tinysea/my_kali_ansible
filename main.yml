@@ -34,3 +34,4 @@
             - DEVSENSE.phptools-vscode
             - GitHub.copilot-nightly
             - snyk-security.snyk-vulnerability-scanner
+            - vscodevim.vim
