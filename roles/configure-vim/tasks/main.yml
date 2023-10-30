@@ -15,10 +15,6 @@
 - name: "Changing colorscheme to gruvbox"
   shell:
     cmd: echo "colorscheme gruvbox" >> ~/.vimrc
-- name: "Installing YCM plugin"
-  command:
-    cmd: python3 install.py --all
-    chdir: "{{ ansible_env.HOME }}/.vim/bundle/YouCompleteMe"
 
 
 

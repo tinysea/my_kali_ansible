@@ -20,7 +20,6 @@
           update_mode: auto
           update_frequency: 10
     - role: "roles/install-tools"
-    - role: "roles/configure-tmux"
     - role: "roles/configure-i3"
     - role: "roles/configure-alacritty"
     - role: "roles/configure-ohmyzsh"
