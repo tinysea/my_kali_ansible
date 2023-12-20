@@ -21,7 +21,6 @@
           update_frequency: 10
     - role: "roles/install-tools"
     - role: "roles/configure-i3"
-    - role: "roles/configure-alacritty"
     - role: "roles/configure-ohmyzsh"
     - role: gantsign.visual-studio-code
     - role: "roles/configure-vim"
