@@ -1,14 +1,36 @@
 ---
+- name: Ensure Zsh with dependencies are installed
+  apt:
+    name: "zsh"
+    state: present
+    update_cache: yes
+  become: true
 
+- name: Ensure zsh is the default shell
+  user:
+    name: "{{ ansible_user_id }}"
+    shell: "/usr/bin/zsh"
+  become: true
+
+- name: Download Oh My Zsh installation script
+  get_url:
+    url: https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+    dest: /tmp/install_ohmyzsh.sh
+
+- name: Run Oh My Zsh installation script
+  command: sh /tmp/install_ohmyzsh.sh --unattended
+  register: ohmyzsh_result
+  failed_when: "'FAILED' in ohmyzsh_result.stderr"
+  
 - name: "Exporting path in .zshrc"
   shell:
     cmd: echo "export PATH=~/.local/bin:$PATH" >> ~/.zshrc
 - name: "cloning zsh-syntax-highlighting"
   shell:
     cmd: git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-    - name: "cloning zsh-bat"
+- name: "cloning zsh-bat"
   shell:
-    cmd: git clone https://github.com/fdellwing/zsh-bat.git $ZSH_CUSTOM/plugins/zsh-bat
+    cmd: git clone https://github.com/fdellwing/zsh-bat.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-bat
 - name: "add zsh-autosuggestions plugin to .zshrc"
   shell:
     cmd: sed -i "s/plugins\=(/plugins\=(zsh-autosuggestions\ zsh-syntax-highlighting\ zsh-bat\ history\ dirhistory\ copybuffer\ copyfile copypath\ web-search\ sudo\ /g" ~/.zshrc

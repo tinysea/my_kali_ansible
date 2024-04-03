@@ -48,6 +48,8 @@
       - xsel
       - neofetch
       - gobuster
+      - zsh
+      - seclists
     state: latest
   become: true
   become_method: sudo
