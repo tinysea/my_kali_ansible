@@ -5,7 +5,7 @@ set nocompatible              " required
 set clipboard=unnamedplus,autoselect
 
 "set line numbers
-set nu          
+set nu
 
 " Enable type file detection. Vim will be able to try to detect the type of file in use.
 filetype on                  " required
@@ -131,3 +131,4 @@ set background=dark
 colorscheme gruvbox
 highlight Normal ctermbg=NONE
 highlight nonText ctermbg=NONE
+colorscheme gruvbox
