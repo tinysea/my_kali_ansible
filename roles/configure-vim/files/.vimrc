@@ -75,7 +75,7 @@ set foldlevel=99
 " Enable folding with the spacebar
 nnoremap <space> za
 
-silent au BufNewFile,BufRead *.py, *.php, *.c, *.java
+silent au BufNewFile, BufRead *.py, *.php, *.c, *.java
      set tabstop=4
      set softtabstop=4
      set shiftwidth=4
@@ -84,7 +84,7 @@ silent au BufNewFile,BufRead *.py, *.php, *.c, *.java
      set autoindent
      set fileformat=unix
 
-silent au BufNewFile,BufRead *.js, *.html, *.css
+silent au BufNewFile, BufRead *.js, *.html, *.css
      set tabstop=2
      set softtabstop=2
      set shiftwidth=2
