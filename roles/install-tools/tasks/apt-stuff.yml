@@ -50,6 +50,7 @@
       - gobuster
       - zsh
       - seclists
+      - picom
     state: latest
   become: true
   become_method: sudo
