@@ -11,7 +11,7 @@
     dest: "{{ ansible_env.HOME }}"
 - name: "Installing vim plugins"
   shell:
-    cmd: vim +PluginInstall +qall
+    cmd: vim -E -s -c "source ~/.vimrc" -c PluginInstall -c qa
 - name: "Changing colorscheme to gruvbox"
   shell:
     cmd: echo "colorscheme gruvbox" >> ~/.vimrc
